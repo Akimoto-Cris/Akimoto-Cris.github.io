@@ -1,0 +1,1354 @@
+<!DOCTYPE html><html style="display: none;" lang="zh"><head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.2 -->
+    <script>
+        window.materialVersion = "1.5.2"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source">
+
+
+
+
+
+
+
+        <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+
+
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Markdown Basic Grammar | 
+        
+        Blog von 秋本
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" itemprop="description" content="Hexo">
+    <meta name="keywords" content="akimoto">
+    <meta name="theme-color" content="#0097A7">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.bootcss.com/jquery/2.2.1/jquery.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Blog von 秋本">
+    <meta name="msapplication-starturl" content="https://akimoto-cris.github.io/2017/12/26/markdown-basic-grammar/">
+    <meta name="msapplication-navbutton-color" content="#0097A7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Blog von 秋本">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="oBbbYsVrmMnEpJZyfDkV0syUXG6R3Hpe0iPj6EFUB3k">
+    
+
+    <!-- RSS -->
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://akimoto-cris.github.io/2017/12/26/markdown-basic-grammar/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Markdown Basic Grammar | Blog von 秋本">
+    <meta property="og:image" content="/img/favicon.png">
+    <meta property="og:description" content="Hexo">
+    
+
+    
+        <meta property="article:published_time" content="Tue Dec 26 2017 09:55:00 GMT+0800">
+        <meta property="article:modified_time" content="Tue Dec 18 2018 00:33:33 GMT+0800">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://akimoto-cris.github.io/2017/12/26/markdown-basic-grammar/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://akimoto-cris.github.io/2017/12/26/markdown-basic-grammar/index.html",
+    "headline": "Markdown Basic Grammar",
+    "datePublished": "Tue Dec 26 2017 09:55:00 GMT+0800",
+    "dateModified": "Tue Dec 18 2018 00:33:33 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "akimoto-cris",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog von 秋本",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "akimoto",
+    "description": "Hexo",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+        <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-111581444-1', 'auto');ga('send', 'pageview');
+</script>
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('https://fonts.googleapis.com/css?family=Roboto:300,400,500');</script><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"></noscript></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Headers"><span class="post-toc-number">1.</span> <span class="post-toc-text">Headers</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#H1"><span class="post-toc-number">2.</span> <span class="post-toc-text">H1</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#H1-prime"><span class="post-toc-number">3.</span> <span class="post-toc-text">H1-prime</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#H2"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">H2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#H2-prime"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">H2-prime</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#H3"><span class="post-toc-number">3.2.1.</span> <span class="post-toc-text">H3</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#H6"><span class="post-toc-number">3.2.1.0.0.1.</span> <span class="post-toc-text">H6</span></a></li></ol></li></ol></li></ol></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Compared-to-html"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Compared to html:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">4.</span> <span class="post-toc-text"> H1
+ H2…
+ H5
+Emphasis斜体、加粗、斜体加粗、划去效果：
+Copy Code
+*italics* or _italics_
+**bold** or __bold__
+**combine or _combine_**
+~~Scratch.~~
+效果：italics or italicsbold or boldcombine or combineScratch.
+大纲式列表Copy Code
+1. 第一点（识别机制：“任意数字 + . + 半角空格”）
+2. 第二点
+10. 第三点
+..* 打点子列
+4. 第四点 第一段
+...第二段
+
+* Unordered list can use asterisks
+- Or minuses
++ Or pluses
+插入URL 和 图片URL:    some text 如：[B站](https://www.bilibili.com)B站
+Image:     如：![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")鼠标在图片上悬停看title:
+Compared to htmlCopy Code
+&lt;a ref = "https://www.bilibili.com"&gt;B站&lt;/a&gt;
+&lt;img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png"&gt;Logo Title Text 1&lt;/img&gt;
+B站Logo Title Text 1
+代码块行内代码用单引号 code :Inline code is here.整块代码用三个引号, 注释语言显示语法高亮：
+Copy Code
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+Copy Code
+s = "Python syntax highlighting"
+print s
+
+Copy Code
+No language indicated, so no syntax highlighting. 
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+
+&lt;p class="code-caption" data-lang="javascript" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"&gt;&lt;span class="code-caption-label"&gt;&lt;/span&gt;&lt;a class="code-caption-copy"&gt;Copy Code&lt;/a&gt;&lt;/p&gt;
+``` javascript 
+var s = "JavaScript syntax highlighting";
+alert(s);
+Copy Code
+s = "Python syntax highlighting"
+print s
+
+Copy Code
+No language indicated, so no syntax highlighting. 
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+水平分隔符三个以上的 ‘-‘, ‘*’ 或者 ‘_’
+Copy Code
+A
+---
+B
+***
+C
+___
+D
+*****
+效果：
+AB
+
+C
+
+D
+
+LaTex 公式在写这篇blog之前，本来以为只要在公式两头加 $ 或者 $$ 符号就搞定了，没想到在 Hexo 中渲染 LaTex 公式并不容易，
+Hexo 中 LaTex 公式异常的主要原因是 Markdowm 和 Latex 的语法冲突（参考这篇博客），这个问题得不到很好的解决，不能像 Jupyter Notebook 里一样直接在 Markdown 中间插入 Latex 都没问题。
+解决方法：
+
+有一些 hexo 主题本身支持 Mathjax 插件，比如我使用的 material 主题，只需要在博客中指定开启这个插件就解决了；… 默认的 landscape 主题的 Mathjax 原本有 BUG 但可能现在已经修复了：… landscape 的官方说明：
+如果主题不支持这个插件的话，要安裝 hexo-math ：npm install hexo-math --save。如果仍然渲染失败的话，手动在 html 文件里面加入 mathjax 的 JavaScript
+
+真心希望 hexo 更新的时候可以内置支持…渲染测试：（失败）
+Copy Code
+$$\frac{\partial ^2 \varphi}{\partial x^2}$$
+$$\sigma \Sigma$$
+行内公式：$\varphi=\frac{Q}{4\pi \epsilon\_0 r}$
+效果：$$\frac{\partial ^2 \varphi}{\partial x^2}$$$$\sigma \Sigma$$行内公式：$\varphi=\frac{Q}{4\pi \epsilon_0 r}$
+参考https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">4.1.</span> <span class="post-toc-text"> H2…
+ H5
+Emphasis斜体、加粗、斜体加粗、划去效果：
+Copy Code
+*italics* or _italics_
+**bold** or __bold__
+**combine or _combine_**
+~~Scratch.~~
+效果：italics or italicsbold or boldcombine or combineScratch.
+大纲式列表Copy Code
+1. 第一点（识别机制：“任意数字 + . + 半角空格”）
+2. 第二点
+10. 第三点
+..* 打点子列
+4. 第四点 第一段
+...第二段
+
+* Unordered list can use asterisks
+- Or minuses
++ Or pluses
+插入URL 和 图片URL:    some text 如：[B站](https://www.bilibili.com)B站
+Image:     如：![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")鼠标在图片上悬停看title:
+Compared to htmlCopy Code
+&lt;a ref = "https://www.bilibili.com"&gt;B站&lt;/a&gt;
+&lt;img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png"&gt;Logo Title Text 1&lt;/img&gt;
+B站Logo Title Text 1
+代码块行内代码用单引号 code :Inline code is here.整块代码用三个引号, 注释语言显示语法高亮：
+Copy Code
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+Copy Code
+s = "Python syntax highlighting"
+print s
+
+Copy Code
+No language indicated, so no syntax highlighting. 
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+
+&lt;p class="code-caption" data-lang="javascript" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"&gt;&lt;span class="code-caption-label"&gt;&lt;/span&gt;&lt;a class="code-caption-copy"&gt;Copy Code&lt;/a&gt;&lt;/p&gt;
+``` javascript 
+var s = "JavaScript syntax highlighting";
+alert(s);
+Copy Code
+s = "Python syntax highlighting"
+print s
+
+Copy Code
+No language indicated, so no syntax highlighting. 
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+水平分隔符三个以上的 ‘-‘, ‘*’ 或者 ‘_’
+Copy Code
+A
+---
+B
+***
+C
+___
+D
+*****
+效果：
+AB
+
+C
+
+D
+
+LaTex 公式在写这篇blog之前，本来以为只要在公式两头加 $ 或者 $$ 符号就搞定了，没想到在 Hexo 中渲染 LaTex 公式并不容易，
+Hexo 中 LaTex 公式异常的主要原因是 Markdowm 和 Latex 的语法冲突（参考这篇博客），这个问题得不到很好的解决，不能像 Jupyter Notebook 里一样直接在 Markdown 中间插入 Latex 都没问题。
+解决方法：
+
+有一些 hexo 主题本身支持 Mathjax 插件，比如我使用的 material 主题，只需要在博客中指定开启这个插件就解决了；… 默认的 landscape 主题的 Mathjax 原本有 BUG 但可能现在已经修复了：… landscape 的官方说明：
+如果主题不支持这个插件的话，要安裝 hexo-math ：npm install hexo-math --save。如果仍然渲染失败的话，手动在 html 文件里面加入 mathjax 的 JavaScript
+
+真心希望 hexo 更新的时候可以内置支持…渲染测试：（失败）
+Copy Code
+$$\frac{\partial ^2 \varphi}{\partial x^2}$$
+$$\sigma \Sigma$$
+行内公式：$\varphi=\frac{Q}{4\pi \epsilon\_0 r}$
+效果：$$\frac{\partial ^2 \varphi}{\partial x^2}$$$$\sigma \Sigma$$行内公式：$\varphi=\frac{Q}{4\pi \epsilon_0 r}$
+参考https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#undefined"><span class="post-toc-number">4.1.0.0.1.</span> <span class="post-toc-text"> H5
+Emphasis斜体、加粗、斜体加粗、划去效果：
+Copy Code
+*italics* or _italics_
+**bold** or __bold__
+**combine or _combine_**
+~~Scratch.~~
+效果：italics or italicsbold or boldcombine or combineScratch.
+大纲式列表Copy Code
+1. 第一点（识别机制：“任意数字 + . + 半角空格”）
+2. 第二点
+10. 第三点
+..* 打点子列
+4. 第四点 第一段
+...第二段
+
+* Unordered list can use asterisks
+- Or minuses
++ Or pluses
+插入URL 和 图片URL:    some text 如：[B站](https://www.bilibili.com)B站
+Image:     如：![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")鼠标在图片上悬停看title:
+Compared to htmlCopy Code
+&lt;a ref = "https://www.bilibili.com"&gt;B站&lt;/a&gt;
+&lt;img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png"&gt;Logo Title Text 1&lt;/img&gt;
+B站Logo Title Text 1
+代码块行内代码用单引号 code :Inline code is here.整块代码用三个引号, 注释语言显示语法高亮：
+Copy Code
+```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+Copy Code
+s = "Python syntax highlighting"
+print s
+
+Copy Code
+No language indicated, so no syntax highlighting. 
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+
+&lt;p class="code-caption" data-lang="javascript" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"&gt;&lt;span class="code-caption-label"&gt;&lt;/span&gt;&lt;a class="code-caption-copy"&gt;Copy Code&lt;/a&gt;&lt;/p&gt;
+``` javascript 
+var s = "JavaScript syntax highlighting";
+alert(s);
+Copy Code
+s = "Python syntax highlighting"
+print s
+
+Copy Code
+No language indicated, so no syntax highlighting. 
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+水平分隔符三个以上的 ‘-‘, ‘*’ 或者 ‘_’
+Copy Code
+A
+---
+B
+***
+C
+___
+D
+*****
+效果：
+AB
+
+C
+
+D
+
+LaTex 公式在写这篇blog之前，本来以为只要在公式两头加 $ 或者 $$ 符号就搞定了，没想到在 Hexo 中渲染 LaTex 公式并不容易，
+Hexo 中 LaTex 公式异常的主要原因是 Markdowm 和 Latex 的语法冲突（参考这篇博客），这个问题得不到很好的解决，不能像 Jupyter Notebook 里一样直接在 Markdown 中间插入 Latex 都没问题。
+解决方法：
+
+有一些 hexo 主题本身支持 Mathjax 插件，比如我使用的 material 主题，只需要在博客中指定开启这个插件就解决了；… 默认的 landscape 主题的 Mathjax 原本有 BUG 但可能现在已经修复了：… landscape 的官方说明：
+如果主题不支持这个插件的话，要安裝 hexo-math ：npm install hexo-math --save。如果仍然渲染失败的话，手动在 html 文件里面加入 mathjax 的 JavaScript
+
+真心希望 hexo 更新的时候可以内置支持…渲染测试：（失败）
+Copy Code
+$$\frac{\partial ^2 \varphi}{\partial x^2}$$
+$$\sigma \Sigma$$
+行内公式：$\varphi=\frac{Q}{4\pi \epsilon\_0 r}$
+效果：$$\frac{\partial ^2 \varphi}{\partial x^2}$$$$\sigma \Sigma$$行内公式：$\varphi=\frac{Q}{4\pi \epsilon_0 r}$
+参考https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Emphasis"><span class="post-toc-number">5.</span> <span class="post-toc-text">Emphasis</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#大纲式列表"><span class="post-toc-number">6.</span> <span class="post-toc-text">大纲式列表</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#插入URL-和-图片"><span class="post-toc-number">7.</span> <span class="post-toc-text">插入URL 和 图片</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Compared-to-html-1"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">Compared to html</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码块"><span class="post-toc-number">8.</span> <span class="post-toc-text">代码块</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#水平分隔符"><span class="post-toc-number">9.</span> <span class="post-toc-text">水平分隔符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#A"><span class="post-toc-number">9.1.</span> <span class="post-toc-text">A</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LaTex-公式"><span class="post-toc-number">10.</span> <span class="post-toc-text">LaTex 公式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考"><span class="post-toc-number">10.1.</span> <span class="post-toc-text">参考</span></a></li></ol></li>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Markdown Basic Grammar
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>akimoto-cris</strong>
+        <span>12月 26, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&amp;title=Markdown Basic Grammar&amp;url=https://akimoto-cris.github.io/2017/12/26/markdown-basic-grammar/index.html&amp;pic=https://akimoto-cris.github.io/img/favicon.png&amp;searchPic=false&amp;style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Markdown Basic Grammar&amp;url=https://akimoto-cris.github.io/2017/12/26/markdown-basic-grammar/index.html&amp;via=akimoto-cris" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://akimoto-cris.github.io/2017/12/26/markdown-basic-grammar/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>Markdown is a “HTML”-like tag language, What you see is what you get, just follow some basic rules and you get beautiful page. This is a cheatsheet and simple demonstration of Markdown as my first blog on HEXO.</p>
+<h1 id="Headers"><a href="#Headers" class="headerlink" title="Headers"></a>Headers</h1><p></p><p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code># H1
+or:
+H1-prime
+======
+
+## H2
+or:
+H2-prime
+------
+
+### H3
+###### H6
+</code></pre><p>效果：</p>
+<h1 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h1><p>or:</p>
+<h1 id="H1-prime"><a href="#H1-prime" class="headerlink" title="H1-prime"></a>H1-prime</h1><h2 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h2><p>or:</p>
+<h2 id="H2-prime"><a href="#H2-prime" class="headerlink" title="H2-prime"></a>H2-prime</h2><h3 id="H3"><a href="#H3" class="headerlink" title="H3"></a>H3</h3><h6 id="H6"><a href="#H6" class="headerlink" title="H6"></a>H6</h6><h2 id="Compared-to-html"><a href="#Compared-to-html" class="headerlink" title="Compared to html:"></a>Compared to html:</h2><p></p><p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code>&lt;h1/&gt; H1
+&lt;h2/&gt; H2
+...
+&lt;h5/&gt; H5
+</code></pre><p></p><h1> H1<p></p>
+<p></p></h1><h2> H2<br>…<p></p>
+<p></p></h2><h5> H5<p></p>
+</h5><h1 id="Emphasis"><a href="#Emphasis" class="headerlink" title="Emphasis"></a>Emphasis</h1><p>斜体、加粗、斜体加粗、划去效果：</p>
+<p></p><p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code>*italics* or _italics_
+**bold** or __bold__
+**combine or _combine_**
+~~Scratch.~~
+</code></pre><p>效果：<br><em>italics</em> or <em>italics</em><br><strong>bold</strong> or <strong>bold</strong><br><strong>combine or <em>combine</em></strong><br><del>Scratch.</del></p>
+<h1 id="大纲式列表"><a href="#大纲式列表" class="headerlink" title="大纲式列表"></a>大纲式列表</h1><p></p><p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code>1. 第一点（识别机制：“任意数字 + . + 半角空格”）
+2. 第二点
+10. 第三点
+..* 打点子列
+4. 第四点 第一段
+...第二段
+
+* Unordered list can use asterisks
+- Or minuses
++ Or pluses
+</code></pre><h1 id="插入URL-和-图片"><a href="#插入URL-和-图片" class="headerlink" title="插入URL 和 图片"></a>插入URL 和 图片</h1><p>URL:    <a href="your url">some text</a> 如：<code>[B站](https://www.bilibili.com)</code><br><a href="https://www.bilibili.com" target="_blank" rel="noopener">B站</a></p>
+<p>Image:    <img src="image's url" alt="some text"> 如：<code>![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")</code><br>鼠标在图片上悬停看title:<br><img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png" alt="alt text" title="Logo Title Text 1"></p>
+<h2 id="Compared-to-html-1"><a href="#Compared-to-html-1" class="headerlink" title="Compared to html"></a>Compared to html</h2><p></p><p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code>&lt;a ref = "https://www.bilibili.com"&gt;B站&lt;/a&gt;
+&lt;img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png"&gt;Logo Title Text 1&lt;/img&gt;
+</code></pre><p><a ref="https://www.bilibili.com">B站</a><br><img src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png">Logo Title Text 1</p>
+<h1 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h1><p>行内代码用单引号 <code></code>code<code></code> :<br>Inline <code>code</code> is here.<br>整块代码用三个引号, 注释语言显示语法高亮：</p>
+<p></p><p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code>```javascript
+var s = "JavaScript syntax highlighting";
+alert(s);
+</code></pre><p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code class="python">s = "Python syntax highlighting"
+print s
+</code></pre>
+<p></p><p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code>No language indicated, so no syntax highlighting. 
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+</code></pre><pre><code>
+&lt;p class="code-caption" data-lang="javascript" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"&gt;&lt;span class="code-caption-label"&gt;&lt;/span&gt;&lt;a class="code-caption-copy"&gt;Copy Code&lt;/a&gt;&lt;/p&gt;
+``` javascript 
+var s = "JavaScript syntax highlighting";
+alert(s);
+</code></pre><p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code class="python">s = "Python syntax highlighting"
+print s
+</code></pre>
+<p></p><p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code>No language indicated, so no syntax highlighting. 
+But let's throw in a &lt;b&gt;tag&lt;/b&gt;.
+</code></pre><h1 id="水平分隔符"><a href="#水平分隔符" class="headerlink" title="水平分隔符"></a>水平分隔符</h1><p>三个以上的 ‘-‘, ‘*’ 或者 ‘_’</p>
+<p></p><p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code>A
+---
+B
+***
+C
+___
+D
+*****
+</code></pre><p>效果：</p>
+<h2 id="A"><a href="#A" class="headerlink" title="A"></a>A</h2><p>B</p>
+<hr>
+<p>C</p>
+<hr>
+<p>D</p>
+<hr>
+<h1 id="LaTex-公式"><a href="#LaTex-公式" class="headerlink" title="LaTex 公式"></a>LaTex 公式</h1><p>在写这篇blog之前，本来以为只要在公式两头加 $ 或者 $$ 符号就搞定了，没想到在 Hexo 中渲染 LaTex 公式并不容易，</p>
+<p>Hexo 中 LaTex 公式异常的主要原因是 Markdowm 和 Latex 的语法冲突（参考<a href="https://fsh0524.github.io/2016/03/03/LaTeX-in-Hexo/" target="_blank" rel="noopener">这篇博客</a>），这个问题得不到很好的解决，不能像 Jupyter Notebook 里一样直接在 Markdown 中间插入 Latex 都没问题。</p>
+<p>解决方法：</p>
+<ol>
+<li>有一些 hexo 主题本身支持 Mathjax 插件，比如我使用的 <a href="https://material.viosey.com/docs/#/compose?id=front-matter" target="_blank" rel="noopener">material 主题</a>，只需要在博客中指定开启这个插件就解决了；<br>… 默认的 landscape 主题的 Mathjax 原本有 BUG 但可能现在已经修复了：<br>… landscape 的官方说明：<div class="video-container"><iframe src="//www.youtube.com/embed/YZ7txjZHBO4" frameborder="0" allowfullscreen=""></iframe></div></li>
+<li>如果主题不支持这个插件的话，要安裝 hexo-math ：<code>npm install hexo-math --save</code>。如果仍然渲染失败的话，手动在 html 文件里面加入 mathjax 的 JavaScript</li>
+</ol>
+<p>真心希望 hexo 更新的时候可以内置支持…<br>渲染测试：（失败）</p>
+<p></p><p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
+<pre><code>$$\frac{\partial ^2 \varphi}{\partial x^2}$$
+$$\sigma \Sigma$$
+行内公式：$\varphi=\frac{Q}{4\pi \epsilon\_0 r}$
+</code></pre><p>效果：<br>$$\frac{\partial ^2 \varphi}{\partial x^2}$$<br>$$\sigma \Sigma$$<br>行内公式：$\varphi=\frac{Q}{4\pi \epsilon_0 r}$</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" rel="noopener">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0;
+            display: none
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://akimoto-cris.github.io/2017/12/26/markdown-basic-grammar/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://akimoto-cris.github.io/2017/12/26/markdown-basic-grammar/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $.ajax({
+        url: 'https://disqus.com/next/config.json',
+        timeout: 4000,
+        type: 'GET',
+        success: (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//akimotocris.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            $('.disqus_click_btn').css('display','none');
+        })(),
+        error: function() {
+          $('.disqus_click_btn').css('display','block');
+        }
+    });
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//akimotocris.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.disqus_click_btn').css('display','none');
+    });
+</script>
+  	
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/12/31/signalsystem-project/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/12/24/memoryexcess/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="akimoto-cris's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        akimotohisashibi@outlook.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="akimotohisashibi@outlook.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/02/">二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">4</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Algorithm-Exercise/">Algorithm Exercise<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/ML/">ML<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/python/">python<span class="sidebar_archives-count">1</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">11</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material" class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/Akimoto-Cris" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+    
+    <!-- V2EX -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Blog von 秋本
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/lazyload.min.js", true)</script>
+
+
+
+    <script>lsloader.load("js_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/js.min.js", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/nprogress.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+    
+</script>
+
+<!-- MathJax Load-->
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+    <script src="https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.2 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        
+    
+
+</body></html>

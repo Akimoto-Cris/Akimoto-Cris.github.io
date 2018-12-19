@@ -491,7 +491,6 @@
     
         <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>Keras 初心者（我）不熟悉 GPU 训练中的内存控制方法，近日在训练 VGG16 模型的时候总是出现 ResourceExhaustedError 的错误。一开始百思不得其解，因为服务器上的 GPU 的显存大概有 12 GB，正常应该是够用的。</p>
 <p>如果看报错信息，很可能会误以为是卷积层参数问题：</p>
-<p></p><p class="code-caption" data-lang="bash" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="bash">tensorflow.python.framework.errors_impl.ResourceExhaustedError: OOM when allocating tensor with shape[1024,32,224,224] and type float on /job:localhost/replica:0/task:0/device:GPU:0 by allocator GPU_0_bfc
      [[Node: conv1_1/convolution = Conv2D[T=DT_FLOAT, _class=["loc:@gradients/conv1_1/convolution_grad/Conv2DBackpropFilter"], data_format="NCHW", dilations=[1, 1, 1, 1], padding="SAME", strides=[1, 1, 1, 1], use_cudnn_on_gpu=true, _device="/job:localhost/replica:0/task:0/device:GPU:0"](gradients/conv1_1/convolution_grad/Conv2DBackpropFilter-0-TransposeNHWCToNCHW-LayoutOptimizer, conv1_1/kernel/read)]]
 
@@ -513,11 +512,11 @@ Current usage from device: /job:localhost/replica:0/task:0/device:GPU:0, allocat
 
   ······
   ······
+
 </code></pre>
 <p>But 实际上，由于模型的训练需要用到大批量的训练数据。如果使用 <code>model.fit</code> 进行训练，内存中的训练数据会全部送入 GPU 显存中，占满显存空间。<br>解决方法就是使用 <a href="https://keras.io/models/model/" target="_blank" rel="noopener"><code>model.fit_generator</code></a> ，将训练数据分批送入 GPU 中的训练进程。</p>
 <p><strong>注意</strong>：对于 12GB 显存，每批数据的大小即 <code>batch_size</code> 最好设置为 128 ~ 256，否则太大了还是会报错。</p>
-<h1 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h1><h2 id="训练代码："><a href="#训练代码：" class="headerlink" title="训练代码："></a>训练代码：</h2><p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
-<pre><code class="python"># data_loader 是自己写的一个的类，里面包含 model.fit_generator 函数需要的 generator
+<h1 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h1><h2 id="训练代码："><a href="#训练代码：" class="headerlink" title="训练代码："></a>训练代码：</h2><pre><code class="python"># data_loader 是自己写的一个的类，里面包含 model.fit_generator 函数需要的 generator
 dl = data_loader()
 
 history = model.fit_generator(dl.data_loader(input_shape=input_shape),    # 输入训练集生成器
@@ -526,7 +525,6 @@ history = model.fit_generator(dl.data_loader(input_shape=input_shape),    # 输�
   validation_data=dl.data_loader(input_shape=input_shape, option='val'))# 输入验证集生成器
 </code></pre>
 <h2 id="Generator："><a href="#Generator：" class="headerlink" title="Generator："></a>Generator：</h2><p>注意，生成器的输出格式必须为 <code>(input, output)</code> 或者 <code>({'input_1': input_array_1, 'input_2': input_arrary_2}, {'output': output_array})</code></p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">
 class data_loader:
     ......

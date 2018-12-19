@@ -497,7 +497,6 @@
 </ol>
 <p>第三步可以用盲目 (blind) 搜索的方法。相对应的也有启发式 (heuristic) 的搜索方法，即考虑问题的特有性质，选用合适的规则从而提高搜索的效率。引用回溯法解决路径比较多，即解空间庞大的问题的时候会很笨拙，但确是系统性求解的方法。</p>
 <h1 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h1><h2 id="迷宫问题"><a href="#迷宫问题" class="headerlink" title="迷宫问题"></a>迷宫问题</h2><p>典型的迷宫是一个不完全无向图，从一个节点（迷宫入口）开始搜索是否能到达另一个实现定好的节点（迷宫出口），并记录下途经格节点及其边（路径）<br>解空间即是各个路口的集合</p>
-<p></p><p class="code-caption" data-lang="c" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="c">#include &lt;vector&gt;
 #include &lt;iosteam&gt;
 using namespace std;

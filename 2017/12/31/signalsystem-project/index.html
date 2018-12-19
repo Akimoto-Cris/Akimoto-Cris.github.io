@@ -504,7 +504,6 @@
 <li>How to read, extract and process data from wfdb-python package, which is an open source ECG dataset.</li>
 </ol>
 <h1 id="本编"><a href="#本编" class="headerlink" title="本编"></a>本编</h1><p>首先调用所需的 Python 库：</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">import numpy as np
 import scipy.signal as signal
 import matplotlib.pyplot as plt
@@ -513,12 +512,11 @@ from matplotlib.font_manager import FontProperties
 
 myfont = FontProperties(fname=r'C:/Windows/Fonts/msyh.ttf')
 # set default size of plots
-plt.rcParams['figure.figsize'] = (15, 4)
+plt.rcParams['figure.figsize'] = (15, 4) 
 </code></pre>
 <h2 id="理想窗函数滤波器"><a href="#理想窗函数滤波器" class="headerlink" title="理想窗函数滤波器"></a>理想窗函数滤波器</h2><p>理想窗函数的频响如图，频谱在<strong>通带和阻带之间直接截断</strong>，没有过渡带，如果是一个非因果的双边滤波器，则他的时域响应是一个离散的升余弦函数：<br>$$h_{ideal}[n] = \frac{\sin(2 \pi f_c)}{\pi n} = 2f_c sinc(2f_c n)$$</p>
 <p>而一个因果的单边理想窗函数 LPF 的频响示意图如下：<br><img src="/signalsystem-project/2016-03-19_56ed1bb0681e3.png" class="[class names]" title="[20] [12] [ideal window filter [alt text]]"></p>
 <p>接下来用理论的时域响应函数通过FFT得到因果和非因果窗函数各自的频响：</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">#one side signal (karma)
 def sinc_n(M, fc):
     return 2 * fc * np.sinc(2 * fc * np.arange(0, M, 1.0))
@@ -559,7 +557,6 @@ def sincdouble_n(M, fc):
         plt.show()
 
     return f, h_dB
-&lt;p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"&gt;&lt;span class="code-caption-label"&gt;&lt;/span&gt;&lt;a class="code-caption-copy"&gt;Copy Code&lt;/a&gt;&lt;/p&gt;
 </code></pre>
 <pre><code class="python"># M is width of window in time domain
 M = 30
@@ -578,7 +575,6 @@ f1, h1_dB = sinc_freqz(b1, 'rectangle window (two-side)')
 <li>比较单边和双边窗函数的 MSB （最小阻带衰减），单边窗的 MSB 远小于双边窗的，这意味着单边窗的低通滤波性能远不如双边窗。而双边窗的 MSB 增益也只有 -21dB ，这也是不足以实际产生功用的。</li>
 </ol>
 <p>进一步探究窗的宽窄对 MSB 参数的影响：</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">Ms = [8, 16, 32, 64, 90, 160]
 cache = dict()
 for i, M in enumerate(Ms):
@@ -598,7 +594,6 @@ plt.show()
 <li>Kaiser 凯泽窗：<br>$$\omega[k] = \frac{I_0[\beta \sqrt{1 - (1 - \frac{2k}{M - 1})^2}]}{I_0 [\beta]}\quad(0 \leq k \leq M - 1)$$<br>特性：Kaiser 窗的性能和旁瓣宽度与参数$\beta$有关</li>
 </ul>
 <p>利用 scipy 科学计算包中封装好的 <code>signal.firwin</code> 类方法来可视化这些窗函数：</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">def get_window(wintype, Nx, cutoff = 0.5):   
     ''' Nx is equivalent to M '''
 
@@ -631,7 +626,6 @@ plt.show()
             "hann", 
             ('kaiser', 4.5513)], 61)        #beta = 4.5513
 plt.show()
-&lt;p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"&gt;&lt;span class="code-caption-label"&gt;&lt;/span&gt;&lt;a class="code-caption-copy"&gt;Copy Code&lt;/a&gt;&lt;/p&gt;
 </code></pre>
 <img src="/signalsystem-project/4wins.png" class="[class names]" title="[26] [16] [ideal win fr [alt text]]">
 <p><strong>结论：</strong></p>
@@ -657,7 +651,6 @@ plt.show()
 <p>可以看出前者的性能明显优于后者。</p>
 <h2 id="signal-filtfilt-和-signal-lfilter"><a href="#signal-filtfilt-和-signal-lfilter" class="headerlink" title="signal.filtfilt 和 signal.lfilter"></a>signal.filtfilt 和 signal.lfilter</h2><p>当我们对上述设计并实现的 FIR 数字滤波器进行比对和选择之后，遴选出的一些滤波器将会用于实际应用。这就需要用到 scipy 库中给出的信号与滤波器相作用的方法，其中有两种不同的滤波函数：<code>signal.filtfilt</code> 和 <code>signal.lfilter</code>。在查阅官方 doc 之后，由于两个 filter 函数的 API 都很类似，没有很好地展示两个实际上的区别，</p>
 <p>下面用一个简单的信号来 demo 一下两者的区别，输入是一个低频率和一个高频率叠加形成的信号：</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">def filtfilt_demo(b,a,x, lim = (0, 400)):
     (l, h) = lim
     y = signal.filtfilt(b, a, x)
@@ -688,7 +681,6 @@ plt.show()
 nom, denom = signal.butter(8, 0.125, btype='low')    # LPF
 _ = filtfilt_demo(nom, denom, x)
 _ =lfilter_demo(nom,denom, x)
-&lt;p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"&gt;&lt;span class="code-caption-label"&gt;&lt;/span&gt;&lt;a class="code-caption-copy"&gt;Copy Code&lt;/a&gt;&lt;/p&gt;
 </code></pre>
 <img src="/signalsystem-project/filterlfilter.png" class="[class names]" title="[20] [26] [ideal win fr [alt text]]">
 <p><strong>结论：</strong><br>对于低通滤波器，用 <code>signal.filtfilt</code> 施加在输入信号上时，输出信号的前几个时刻就已经很好的显现出低频信号的效果，这是因为函数将滤波器一前一后作用在了输入上两次；<br>而 <code>signal.lfilter</code> 只对输入信号作用一次，因此需要迟疑一段时间才能收敛到理论输出信号上。</p>
@@ -699,14 +691,12 @@ _ =lfilter_demo(nom,denom, x)
 <pre><code class="python"># Convert one channel to processable data
 # Argument "fs_target" stands for resampling freq
 data, _ = wfdb.processing.resample_sig(x=signals[:,0], fs=fields['fs'], fs_target=1280)
-&lt;p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"&gt;&lt;span class="code-caption-label"&gt;&lt;/span&gt;&lt;a class="code-caption-copy"&gt;Copy Code&lt;/a&gt;&lt;/p&gt;
 </code></pre>
 <pre><code class="python">plt.plot(data[:5000])
 plt.show()
 </code></pre>
 <p>打印出其中一段提取出的数据：<br><img src="/signalsystem-project/data.png" class="[class names]" title="[26] [10] [ideal win fr [alt text]]"><br>可以看到这段记录的心电图曲线叠加了很多细微的高频噪声，但尚未淹没基本的上升下降的规律——每个周期内都有一个很短的高峰值紧跟着两到三个小幅振动。我们只想要保留这些相对噪声而言比较稳定的低频信号，而将噪声过滤掉。</p>
 <p>通过傅里叶变换得到 wfdb data 的频谱：</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">'''select a test freqency to observe the spectrum of the signal
 '''
 f_test = 0.3
@@ -723,7 +713,6 @@ plt.show()
 </code></pre>
 <img src="/signalsystem-project/dataspectrum.png" class="[class names]" title="[20] [8] [ideal win fr [alt text]]">
 <p>下一步是用 FIR 低通滤波器过滤提取出的 ECG 数据。滤波器使用 Blackman 窗。</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">firwin = get_window(['blackman', ('kaiser', 6)], 500, 0.2)
 </code></pre>
 <pre><code class="python">d_firwin = np.convolve(firwin['blackman'], data)
@@ -745,7 +734,6 @@ plt.text(lim, 0, 'b3')
 plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
 plt.ylim([-1.0, 1.0])
 plt.show()
-&lt;p class="code-caption" data-lang="" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"&gt;&lt;span class="code-caption-label"&gt;&lt;/span&gt;&lt;a class="code-caption-copy"&gt;Copy Code&lt;/a&gt;&lt;/p&gt;
 </code></pre>
 <img src="/signalsystem-project/firwfdb.png" class="[class names]" title="[20] [8] [ideal win fr [alt text]]">
 <p>由于 窗函数的阶数较低，效果不是很理想。下面使用 <code>signal.butter</code> 函数提供的 Butterworth 型滤波器，现在将多阶滤波器的滤波效果进行对比：</p>
@@ -754,7 +742,6 @@ d_filtered = filtfilt_demo(nom1, denom1, data, (0, 2000))
 </code></pre>
 <p>滤波后的输出信号如下图<br><img src="/signalsystem-project/butter.png" class="[class names]" title="[20] [8] [ideal win fr [alt text]]"></p>
 <p>分析 Butterwoth 的零极点情况：</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">(r, p, k) = signal.residuez(nom1, denom1)
 
 plt.plot(r.real, r.imag, 'o')
@@ -769,7 +756,6 @@ plt.show()
 <img src="/signalsystem-project/residuez.png" class="[class names]" title="[8] [8] [ideal win fr [alt text]]">
 <p>零点和极点的个数各有 8 个，此时可以达到良好的滤波效果。</p>
 <p>将输入信号与输出信号进行波形的对比（为了可视化效果，在同一张图上显示时将两个波形错开）：</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">plt.plot(data[:2000], label = 'signal')
 plt.plot(d_filtered[:2000] - 0.1, label = 'Butter')
 plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
@@ -778,12 +764,10 @@ plt.show()
 <img src="/signalsystem-project/io.png" class="[class names]" title="[20] [8] [ideal win fr [alt text]]">
 <p>可以看出通过 Butterworth 滤波器的输出波形基本还原了输入心电图数据的走势，很好地分离了高频低频分量，同时也保留了脉冲峰值高度（损失了大约 0.2 的增益）</p>
 <p>如果将刚才的阶数为 8 的滤波器改成高通滤波器，输出应该会得到只含有高频分量的信号。将参数 <code>btype</code> 设为 <code>"high"</code>：</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">nom2, denom2 = signal.butter(8, 0.038, btype='high')
 d2_filtered = filtfilt_demo(nom2, denom2, data, (0, 2000))
 </code></pre>
 <img src="/signalsystem-project/HPF.png" class="[class names]" title="[20] [8] [ideal win fr [alt text]]">
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">plt.plot(data[:2000], label = 'signal')
 plt.plot(d_filtered[:2000] - 0.1, label = 'low')
 plt.plot(d2_filtered[:2000], label = 'high')
@@ -792,7 +776,6 @@ plt.show()
 </code></pre>
 <img src="/signalsystem-project/turbo.png" class="[class names]" title="[20] [8] [ideal win fr [alt text]]">
 <p>观察波形，发现和 HPF 的输出和原始波形中的大部分噪声的震动部分相同，如果想尝试进一步优化 LPF 输出波形，一个自然的想法是将这两部分做减法，观察将得到什么结果：</p>
-<p></p><p class="code-caption" data-lang="python" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="python">k = int(len(data) / 256)
 r = len(data) % 256
 

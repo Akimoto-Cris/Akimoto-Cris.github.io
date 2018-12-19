@@ -497,7 +497,6 @@
 <h2 id="数组指针的越界访问"><a href="#数组指针的越界访问" class="headerlink" title="数组指针的越界访问"></a>数组指针的越界访问</h2><p>当定义一些数组的下标的时候很容易犯这种错，尽管我们早就知道一个数组的下标都是从0开始的。一种常识的选择性遗忘。</p>
 <p>容量为<code>array_size</code>的数组 a 是不存在元素<code>a[array_size]</code>的，如果用了这个不存在的元素，结果就是可能改变程序里其他数据的值（如果内存中下一个地址也在程序中有另一个定义）</p>
 <h2 id="内存分配不足"><a href="#内存分配不足" class="headerlink" title="内存分配不足"></a>内存分配不足</h2><p>例1：</p>
-<p></p><p class="code-caption" data-lang="c++" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="c++">#define array_size 10
 int *a = new int[array_size];
 ... ...
@@ -507,7 +506,6 @@ memcpy(b, a, array_size);
 </code></pre>
 <p>看起来没毛病，错在<code>memcpy</code>的第三个参数应该是数组的物理大小，并不是元素的多少，所以还要乘以 int 类型的字节数：<code>memcpy(b, a, array_size * sizeof(int))</code></p>
 <p>例2：</p>
-<p></p><p class="code-caption" data-lang="c++" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="c++">char *new_string(char *s)
 {
     int len = strlen(s);
@@ -521,7 +519,6 @@ memcpy(b, a, array_size);
 <p>这一点暂时没有想到如何避免</p>
 <hr>
 <p>另一个可能的错误是构造一个指向运行时栈中某值的指针，并将这个指针返回给函数调用者，例如：</p>
-<p></p><p class="code-caption" data-lang="c++" data-line_number="frontend" data-trim_indent="backend" data-label_position="outer" data-labels_left="Code" data-labels_right=":" data-labels_copy="Copy Code"><span class="code-caption-label"></span><a class="code-caption-copy">Copy Code</a></p><p></p>
 <pre><code class="c++">int *p()
 {
     int i = 0;

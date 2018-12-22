@@ -3,16 +3,33 @@
   
     
     <entry>
-      <title>C++ 宏定义妙用</title>
-      <link href="/2018/12/19/hong/"/>
-      <url>/2018/12/19/hong/</url>
+      <title>C++ | C11 特性之匿名函数</title>
+      <link href="/2018/12/22/lambda/"/>
+      <url>/2018/12/22/lambda/</url>
       
-        <content type="html"><![CDATA[<p>今天看某工程的 c++ 代码，其中看到一个很 tricky 且实用的宏定义语法糖，可以让代码可读性变强。</p><p>下面解析一下：</p><pre><code class="c">#define HEAT(i, j, k) heatmap[k + h3 * (j + h2 * i)]... ...foo = HEAT(y, x, k);</code></pre><p>也就是说，代码块里面看起来 <code>HEAT</code> 是一个很漂亮的 3d 张量，但其实本质是一个自定义的一维数组。<br>初次见到这种宏定义用法的时候惊呼妙极了 （どうしょうもねえ =_=）。</p><p>当然了，这只能实现索引的包装，python 中那种切片索引还是没法实现的。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="c-中的匿名函数"><a href="#c-中的匿名函数" class="headerlink" title="c++ 中的匿名函数"></a>c++ 中的匿名函数</h1><p>网上有大把博客 cover 到了匿名函数，所以这里概括一下，C++ 中匿名函数的通用形式：</p><pre><code class="cpp">auto func = [captures] (params) {Statments;} </code></pre><ul><li>captures: 变量选取规则</li><li>params 和 Statments: 和普通函数相同, 不需要返回参数</li></ul><h1 id="变量选取-captures"><a href="#变量选取-captures" class="headerlink" title="变量选取 [captures]:"></a>变量选取 [captures]:</h1><p>为了使函数能够使用函数 block 作用域之外的变量，需要设定函数 变量选取的规则：</p><p>options:</p><ul><li>[] 无视所有外部 block 变量</li><li>[&amp;] 引用所有外部 block 变量</li><li>[=] 拷贝所有外部 block 变量 </li><li>[=, &amp;foo] 拷贝所有外部 block 变量，但只对 foo 引用</li><li>[bar] 只拷贝外部 bar 变量 </li><li>[this] 选取当前类中的 this 指针</li></ul><p>比如：</p><pre><code class="cpp">{    string name;      cin&gt;&gt; name;      return global_address_book.findMatchingAddresses(           // notice that the lambda function uses the the variable &#39;name&#39;          [&amp;] (const string&amp; addr) { return name.find( addr ) != string::npos; }       ); }</code></pre><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.cnblogs.com/lidabo/p/3908663.html" target="_blank" rel="noopener">https://www.cnblogs.com/lidabo/p/3908663.html</a></p>]]></content>
       
       
       <categories>
           
-          <category> Algorithm Exercise </category>
+          <category> CPP Cheatsheet </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>C/C++ 宏定义妙用</title>
+      <link href="/2018/12/19/hong/"/>
+      <url>/2018/12/19/hong/</url>
+      
+        <content type="html"><![CDATA[<p>今天看某工程的 c++ 代码，其中看到一个很 tricky 且实用的宏定义语法糖，可以让代码可读性变强。</p><p>下面解析一下：</p><pre><code class="c">#define HEAT(i, j, k) heatmap[k + h3 * (j + h2 * i)]... ...foo = HEAT(y, x, k);</code></pre><p>也就是说，代码块里面看起来 <code>HEAT</code> 是一个很漂亮的 3d 张量，但其实本质是一个自定义的一维数组。<br>初次见到这种宏定义用法的时候惊呼妙极了 （しょうもねえ =_=）。</p><p>当然了，这只能实现索引的包装，python 中那种切片索引还是没法实现的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> CPP Cheatsheet </category>
           
       </categories>
       

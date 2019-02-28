@@ -45,7 +45,7 @@
     
     <title>
         
-            分类: CPP Cheatsheet | 
+            Leetcode 1001 -- Grid Illumination | 
         
         Blog von 秋本
     </title>
@@ -83,6 +83,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify/tomorrow-night.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -219,7 +222,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Blog von 秋本">
-    <meta name="msapplication-starturl" content="https://akimoto-cris.github.io/categories/CPP-Cheatsheet/">
+    <meta name="msapplication-starturl" content="https://akimoto-cris.github.io/2018/11/19/Grid_illumination/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="Blog von 秋本">
@@ -234,13 +237,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://akimoto-cris.github.io/categories/CPP-Cheatsheet/">
+    <meta property="og:url" content="https://akimoto-cris.github.io/2018/11/19/Grid_illumination/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: CPP Cheatsheet | Blog von 秋本">
+    <meta property="og:title" content="Leetcode 1001 -- Grid Illumination | Blog von 秋本">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Hexo">
     
 
+    
+        <meta property="article:published_time" content="Mon Nov 19 2018 11:04:00 GMT+0800">
+        <meta property="article:modified_time" content="Thu Feb 28 2019 16:26:33 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -248,13 +254,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://akimoto-cris.github.io/categories/CPP-Cheatsheet/index.html">
+        <link rel="canonical" href="https://akimoto-cris.github.io/2018/11/19/Grid_illumination/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://akimoto-cris.github.io/2018/11/19/Grid_illumination/index.html",
+    "headline": "Leetcode 1001 -- Grid Illumination",
+    "datePublished": "Mon Nov 19 2018 11:04:00 GMT+0800",
+    "dateModified": "Thu Feb 28 2019 16:26:33 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "akimoto-cris",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Blog von 秋本",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "akimoto",
+    "description": "Hexo",
+}
+</script>
 
 
     
@@ -296,161 +332,373 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Problem"><span class="post-toc-number">1.</span> <span class="post-toc-text">Problem</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#思路"><span class="post-toc-number">2.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Solution"><span class="post-toc-number">3.</span> <span class="post-toc-text">Solution</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Conclusion"><span class="post-toc-number">4.</span> <span class="post-toc-text">Conclusion</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Ref"><span class="post-toc-number">5.</span> <span class="post-toc-text">Ref</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/12/22/lambda/">C++ | C11 特性之匿名函数</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/12/22/lambda/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="akimoto-cris's avatar">
-            </div>
-            <div>
-                <strong>akimoto-cris</strong>
-                <span>12月 22, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/CPP-Cheatsheet/">CPP Cheatsheet</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/12/19/hong/">C/C++ 宏定义妙用</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            今天看某工程的 c++ 代码，其中看到一个很 tricky 且实用的宏定义语法糖，可以让代码可读性变强。
-下面解析一下：
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/12/19/hong/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="akimoto-cris's avatar">
-            </div>
-            <div>
-                <strong>akimoto-cris</strong>
-                <span>12月 19, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/CPP-Cheatsheet/">CPP Cheatsheet</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Leetcode 1001 -- Grid Illumination
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>akimoto-cris</strong>
+        <span>11月 19, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&amp;title=Leetcode 1001 -- Grid Illumination&amp;url=https://akimoto-cris.github.io/2018/11/19/Grid_illumination/index.html&amp;pic=https://akimoto-cris.github.io/img/favicon.png&amp;searchPic=false&amp;style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Leetcode 1001 -- Grid Illumination&amp;url=https://akimoto-cris.github.io/2018/11/19/Grid_illumination/index.html&amp;via=akimoto-cris" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://akimoto-cris.github.io/2018/11/19/Grid_illumination/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>On a <code>N x N</code> grid of cells, each cell <code>(x, y)</code> with <code>0 &lt;= x &lt; N</code> and <code>0 &lt;= y &lt; N</code> has a lamp.</p>
+<p>Initially, some number of lamps are on.  <code>lamps[i]</code> tells us the location of the <code>i</code>-th lamp that is on.  Each lamp that is on illuminates every square on its x-axis, y-axis, and both diagonals (similar to a Queen in chess).</p>
+<p>For the i-th query <code>queries[i] = (x, y)</code>, the answer to the query is 1 if the cell <code>(x, y)</code> is illuminated, else 0.</p>
+<p>After each query <code>(x, y)</code> [in the order given by queries], we turn off any lamps that are at cell <code>(x, y)</code> or are adjacent 8-directionally (ie., share a corner or edge with cell <code>(x, y)</code>.)</p>
+<p>Return an array of answers.  Each value <code>answer[i]</code> should be equal to the answer of the <code>i</code>-th query <code>queries[i]</code>.</p>
+<p><strong>Example 1</strong>:</p>
+<pre><code>Input: N = 5, lamps = [[0,0],[4,4]], queries = [[1,1],[1,0]]
+Output: [1,0]
+Explanation: 
+Before performing the first query we have both lamps [0,0] and [4,4] on.
+The grid representing which cells are lit looks like this, where [0,0] is the top left corner, and [4,4] is the bottom right corner:
+1 1 1 1 1
+1 1 0 0 1
+1 0 1 0 1
+1 0 0 1 1
+1 1 1 1 1
+Then the query at [1, 1] returns 1 because the cell is lit.  After this query, the lamp at [0, 0] turns off, and the grid now looks like this:
+1 0 0 0 1
+0 1 0 0 1
+0 0 1 0 1
+0 0 0 1 1
+1 1 1 1 1
+Before performing the second query we have only the lamp [4,4] on.  Now the query at [1,0] returns 0, because the cell is no longer lit.
+</code></pre><p><strong>Note</strong>:</p>
+<ol>
+<li>1 &lt;= N &lt;= 10^9</li>
+<li>0 &lt;= lamps.length &lt;= 20000</li>
+<li>0 &lt;= queries.length &lt;= 20000</li>
+<li>lamps[i].length == queries[i].length == 2</li>
+</ol>
+<h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><p>问题核心是找到 <code>query</code> 是不是处在 <code>lamps</code> 能照亮的路径上。我的思路比较直觉，即把这个命题转换一下，只要从 <code>query</code> 出发的 8 个方向上存在 <code>lamp</code>，就说明被照亮。类似 nvidia 的 ray tracing （大嘘</p>
+<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><pre><code class="python">class Solution(object):
+    def backTracing(self, N, lamps, query, offset):    # recursively trace back
+        i, j = query
+        oi, oj = offset
+        ci, cj = current = (i + oi, j + oj)
+        if not (0 &lt;= ci &lt; N and 0 &lt;= cj &lt; N):
+            return False
+
+        if current in lamps:
+            return True
+        elif current == query:
+            return query in lamps
+        return self.backTracing(N, lamps, current, offset)
+
+
+    def turnOff(self, N, lamps, query):
+        for i in range(query[0] - 1, query[0] + 2):
+            for j in range(query[1] - 1, query[1] + 2):
+                if (i, j) in lamps:
+                    lamps.remove((i ,j))
+        return lamps
+
+    def gridIllumination(self, N, lamps, queries):
+        """
+        :type N: int
+        :type lamps: List[List[int]]
+        :type queries: List[List[int]]
+        :rtype: List[int]
+        """
+        res = []
+        lamps = {(lamp[0], lamp[1]) for lamp in lamps}
+
+        for i, query in enumerate(queries):
+            res.append(int(self.backTracing(N, lamps, query, (-1, 0)) or \
+                            self.backTracing(N, lamps, query, (-1, -1)) or \
+                            self.backTracing(N, lamps, query, (-1, 1)) or \
+                            self.backTracing(N, lamps, query, (0, -1)) or \
+                            self.backTracing(N, lamps, query, (0, 0)) or \
+                            self.backTracing(N, lamps, query, (0, 1)) or \
+                            self.backTracing(N, lamps, query, (1, -1)) or \
+                            self.backTracing(N, lamps, query, (1, 0)) or \
+                            self.backTracing(N, lamps, query, (1, 1))))
+            lamps = self.turnOff(N, lamps, query)
+        return res
+</code></pre>
+<p>看起来很完美，答案也是正确的，但可惜到 15/33 就超时了，</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>第一个不看讨论区自己撸出来的答案，还是没法提交成功，有点小失落。再接再厉把。。。</p>
+<h1 id="Ref"><a href="#Ref" class="headerlink" title="Ref"></a>Ref</h1><p><a href="https://leetcode.com/problems/grid-illumination/" target="_blank" rel="noopener">leetcode problem 1001</a></p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0;
+            display: none
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://akimoto-cris.github.io/2018/11/19/Grid_illumination/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://akimoto-cris.github.io/2018/11/19/Grid_illumination/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $.ajax({
+        url: 'https://disqus.com/next/config.json',
+        timeout: 4000,
+        type: 'GET',
+        success: (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//akimotocris.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            $('.disqus_click_btn').css('display','none');
+        })(),
+        error: function() {
+          $('.disqus_click_btn').css('display','block');
+        }
+    });
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//akimotocris.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.disqus_click_btn').css('display','none');
+    });
+</script>
+  	
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2018/12/19/hong/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/11/19/nvidia-smi-problem/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -764,6 +1012,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/prettify.min.js", true)</script>
+        
+    
 
 
 
@@ -776,6 +1028,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     

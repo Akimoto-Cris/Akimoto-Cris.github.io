@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>RuntimeError： Error(s) in loading state_dict in XXX model： - Missing key(s) in state_dict：&quot;...&quot;</title>
+      <link href="/2019/03/14/load_state_dict/"/>
+      <url>/2019/03/14/load_state_dict/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Describe"><a href="#Describe" class="headerlink" title="Describe"></a>Describe</h1><p>pytorch 上，训练 <code>DataParrallel</code> 模型，保存模型时使用 <code>torch.save(model.state_dict(), path)</code>,</p><p>再次导入模型时:</p><pre><code class="python">model = Model()model.load_state_dict(torch.load(path))</code></pre><p>此时报错：</p><pre><code>RuntimeError: Error(s) in loading state_dict in XXX model:    Missing key(s) in state_dict:&quot;...    ...    ...&quot;</code></pre><h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><p>解决方法很简单，在使用 <code>load_state_dict</code> 前，将 <code>model</code> 转换成 <code>DataParrallel</code> 类型：</p><pre><code class="python">model = Model()model = torch.nn.DataParrallel(model, device_ids=devices).cuda()model.load_state_dict(torch.load(path))</code></pre><p>这是要和保存的 <code>state_dict</code> 的类型对应，如果训练的模型是普通模块 <code>nn.Module</code> 的子类，那么就不需要转换类型。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> ML </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>C++ | C11 特性之匿名函数</title>
       <link href="/2018/12/22/lambda/"/>
       <url>/2018/12/22/lambda/</url>
